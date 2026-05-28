@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UniverSale - Your premium global marketplace for cutting-edge gadgets, high-end electronics, precision DIY tools, and smart household innovations. Inquire and place orders instantly via WhatsApp.">
+    <meta name="keywords" content="UniverSale, e-commerce, gadgets, electronics, DIY tools, smart home, WhatsApp shopping, Sri Lanka, LKR">
+    <meta name="author" content="UniverSale">
+    <meta property="og:title" content="UniverSale | Premium Deals & Curated Innovations">
+    <meta property="og:description" content="Explore and order top-tier gadgets, electronics, DIY gear, and smart household products via a seamless WhatsApp integration.">
+    <meta property="og:image" content="./logo.jpg">
+    <meta property="og:type" content="website">
+    
+    <title>UniverSale | Premium Deals & Curated Innovations</title>
+    
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- Background Immersive Orbs -->
+    <div class="ambient-glow bg-orb-1" aria-hidden="true"></div>
+    <div class="ambient-glow bg-orb-2" aria-hidden="true"></div>
+    <div class="ambient-glow bg-orb-3" aria-hidden="true"></div>
+
+    <!-- Navigation Header -->
+    <header class="navbar glass">
+        <div class="nav-container">
+            <a href="#" class="brand-logo" id="store-brand">
+                <img src="./logo.jpg" alt="UniverSale Logo" class="brand-img" id="nav-logo" onerror="this.src='https://placehold.co/100x100/100e5ff/ffffff?text=U';">
+                <div class="brand-text">
+                    <span class="brand-title">UNIVER<span class="gradient-text-blue">SALE</span></span>
+                    <span class="brand-subtitle">GLOBAL MARKETPLACE</span>
+                </div>
+            </a>
+            
+            <div class="search-bar-container glass-input-wrapper">
+                <i data-lucide="search" class="search-icon"></i>
+                <input type="text" id="global-search" placeholder="Search gadgets, electronics, DIY..." aria-label="Search products">
+            </div>
+
+            <nav class="nav-actions">
+                <button class="nav-btn glass-btn tooltip-btn" id="open-settings" aria-label="Store Settings">
+                    <i data-lucide="settings"></i>
+                    <span class="tooltip-text">Setup WhatsApp & Currency</span>
+                </button>
+                <button class="nav-btn glass-btn" id="open-cart" aria-label="Shopping Cart">
+                    <div class="cart-icon-wrapper">
+                        <i data-lucide="shopping-cart"></i>
+                        <span class="cart-badge bounce-in" id="cart-count">0</span>
+                    </div>
+                    <span class="cart-total-text" id="nav-cart-total">0.00 LKR</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Hero Section & Featured Showcase -->
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="hero-info animate-left">
+                    <span class="hero-badge"><i data-lucide="sparkles"></i> Curated Tech & Smart Living</span>
+                    <h1 class="hero-title">Experience the Next Generation of <span class="gradient-text-pink">Smart Gadgets</span></h1>
+                    <p class="hero-description">Discover curated electronics, precision DIY gear, and intelligent household solutions designed to elevate your lifestyle. Order instantly through WhatsApp with secure island-wide dispatch.</p>
+                    
+                    <div class="hero-actions">
+                        <a href="#catalog" class="btn btn-primary btn-glow"><i data-lucide="shopping-bag"></i> Browse Products</a>
+                        <a href="https://wa.me/94707833043" target="_blank" class="btn btn-outline" id="hero-direct-wa">
+                            <i data-lucide="message-square"></i> Chat with Support
+                        </a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Verified Deals</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">Islandwide</span>
+                            <span class="stat-label">Fast Shipping</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">WhatsApp Support</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Interactive Showcase -->
+                <div class="featured-showcase animate-right">
+                    <div class="slider-wrapper glass">
+                        <div class="slides-container" id="featured-slides">
+                            <!-- Dynamically generated slides -->
+                        </div>
+                        <div class="slider-controls">
+                            <button class="slide-control-btn" id="prev-slide" aria-label="Previous Slide">
+                                <i data-lucide="chevron-left"></i>
+                            </button>
+                            <div class="slider-indicators" id="slider-dots"></div>
+                            <button class="slide-control-btn" id="next-slide" aria-label="Next Slide">
+                                <i data-lucide="chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Fast-Link -->
+        <section class="categories-bar-section">
+            <div class="container">
+                <div class="categories-quick-grid">
+                    <div class="category-quick-card glass" data-cat="Gadgets">
+                        <div class="cat-icon-container gradient-cyan-bg">
+                            <i data-lucide="smartphone"></i>
+                        </div>
+                        <div class="cat-quick-info">
+                            <h3>Smart Gadgets</h3>
+                            <span>Futuristic Tech</span>
+                        </div>
+                    </div>
+                    <div class="category-quick-card glass" data-cat="Electronics">
+                        <div class="cat-icon-container gradient-blue-bg">
+                            <i data-lucide="cpu"></i>
+                        </div>
+                        <div class="cat-quick-info">
+                            <h3>Electronics</h3>
+                            <span>Premium Audio & Media</span>
+                        </div>
+                    </div>
+                    <div class="category-quick-card glass" data-cat="DIY Items">
+                        <div class="cat-icon-container gradient-magenta-bg">
+                            <i data-lucide="wrench"></i>
+                        </div>
+                        <div class="cat-quick-info">
+                            <h3>DIY & Precision</h3>
+                            <span>Crafting & Repair Gear</span>
+                        </div>
+                    </div>
+                    <div class="category-quick-card glass" data-cat="Household">
+                        <div class="cat-icon-container gradient-purple-bg">
+                            <i data-lucide="home"></i>
+                        </div>
+                        <div class="cat-quick-info">
+                            <h3>Household</h3>
+                            <span>Smart Living Solutions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Store Catalog Section -->
+        <section id="catalog" class="catalog-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="header-titles">
+                        <span class="sub-title">Explore Store</span>
+                        <h2 class="main-title">Premium Showcase Catalog</h2>
+                    </div>
+                    
+                    <!-- Search, Filters, and Sorting Controls -->
+                    <div class="catalog-controls-container glass">
+                        <div class="filter-tabs">
+                            <button class="filter-tab active" data-filter="all">All Items</button>
+                            <button class="filter-tab" data-filter="Gadgets">Gadgets</button>
+                            <button class="filter-tab" data-filter="Electronics">Electronics</button>
+                            <button class="filter-tab" data-filter="DIY Items">DIY Items</button>
+                            <button class="filter-tab" data-filter="Household">Household</button>
+                        </div>
+                        
+                        <div class="sorting-controls">
+                            <label for="sort-select" class="sr-only">Sort products</label>
+                            <div class="select-wrapper">
+                                <i data-lucide="sliders-horizontal" class="select-icon"></i>
+                                <select id="sort-select">
+                                    <option value="popular">Popularity</option>
+                                    <option value="price-asc">Price: Low to High</option>
+                                    <option value="price-desc">Price: High to Low</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="products-grid" id="products-grid">
+                    <!-- Dynamically populated cards -->
+                </div>
+                
+                <!-- Zero Results Placeholder -->
+                <div class="no-results glass hide" id="no-results-view">
+                    <i data-lucide="package-x" class="no-results-icon"></i>
+                    <h3>No Premium Items Found</h3>
+                    <p>We couldn't find matches for your search query. Try typing another keyword or switching the category tab.</p>
+                    <button class="btn btn-primary" id="reset-filters">Reset Filters</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Trust Features Banner -->
+        <section class="trust-banner">
+            <div class="container">
+                <div class="trust-grid glass">
+                    <div class="trust-card">
+                        <i data-lucide="truck" class="trust-icon gradient-text-blue"></i>
+                        <div class="trust-text">
+                            <h3>Islandwide Safe Delivery</h3>
+                            <p>Fast, tracked shipping to your doorstep across Sri Lanka.</p>
+                        </div>
+                    </div>
+                    <div class="trust-card">
+                        <i data-lucide="message-circle" class="trust-icon gradient-text-pink"></i>
+                        <div class="trust-text">
+                            <h3>Direct WhatsApp Purchase</h3>
+                            <p>No messy registrations. Finalize order directly on chat.</p>
+                        </div>
+                    </div>
+                    <div class="trust-card">
+                        <i data-lucide="shield-check" class="trust-icon gradient-text-blue"></i>
+                        <div class="trust-text">
+                            <h3>Premium Quality Verified</h3>
+                            <p>Every product undergoes extensive testing before dispatch.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="brand-logo">
+                        <img src="./logo.jpg" alt="UniverSale Logo" class="brand-img" id="footer-logo" onerror="this.src='https://placehold.co/100x100/100e5ff/ffffff?text=U';">
+                        <div class="brand-text">
+                            <span class="brand-title">UNIVER<span class="gradient-text-blue">SALE</span></span>
+                            <span class="brand-subtitle">GLOBAL MARKETPLACE</span>
+                        </div>
+                    </div>
+                    <p class="footer-about">We source premium, innovative, and functional tech gadgets, high-end electronics, DIY tools, and smart household utilities to bring you unmatched value with highly personal support.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                        <a href="https://wa.me/94707833043" target="_blank" class="social-icon wa-social" aria-label="WhatsApp" id="footer-wa-social"><i data-lucide="message-square"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-nav-col">
+                    <h3>Shop Categories</h3>
+                    <ul>
+                        <li><a href="#catalog" class="cat-link" data-cat="Gadgets">Smart Gadgets</a></li>
+                        <li><a href="#catalog" class="cat-link" data-cat="Electronics">Electronics</a></li>
+                        <li><a href="#catalog" class="cat-link" data-cat="DIY Items">DIY & Crafting Tools</a></li>
+                        <li><a href="#catalog" class="cat-link" data-cat="Household">Smart Household</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-nav-col">
+                    <h3>How it Works</h3>
+                    <div class="steps-flow">
+                        <div class="flow-step">
+                            <span class="step-num">1</span>
+                            <span>Add products to your cart.</span>
+                        </div>
+                        <div class="flow-step">
+                            <span class="step-num">2</span>
+                            <span>Click 'Checkout via WhatsApp'.</span>
+                        </div>
+                        <div class="flow-step">
+                            <span class="step-num">3</span>
+                            <span>Send the auto-compiled list.</span>
+                        </div>
+                        <div class="flow-step">
+                            <span class="step-num">4</span>
+                            <span>We arrange payment & shipping!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 UniverSale Store. All Rights Reserved. Powered by b7d4ae74-ab6e-4991-9300-fbcb386a6890.</p>
+                <div class="footer-badges">
+                    <span class="trust-badge"><i data-lucide="credit-card"></i> Pay on Delivery / Bank Transfer</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SHOPPING CART SIDE DRAWER -->
+    <div class="drawer-overlay" id="cart-drawer-overlay" aria-hidden="true"></div>
+    <div class="cart-drawer glass" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+        <div class="drawer-header">
+            <h2 id="cart-title"><i data-lucide="shopping-cart" class="title-icon"></i> My Cart</h2>
+            <button class="close-btn glass-btn" id="close-cart" aria-label="Close Cart">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        
+        <div class="drawer-body" id="cart-items-container">
+            <!-- Dynamically populated cart items -->
+        </div>
+        
+        <div class="drawer-footer">
+            <div class="cart-summary-card glass">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">0.00 LKR</span>
+                </div>
+                <div class="summary-row font-bold">
+                    <span>Grand Total</span>
+                    <span id="cart-total" class="total-amount gradient-text-pink">0.00 LKR</span>
+                </div>
+                <p class="summary-note"><i data-lucide="info"></i> Standard delivery rates will be calculated on WhatsApp depending on your region.</p>
+            </div>
+            
+            <div class="checkout-actions">
+                <button class="btn btn-primary btn-full btn-glow" id="whatsapp-checkout-btn">
+                    <i data-lucide="message-square"></i> Send Order to WhatsApp
+                </button>
+                <button class="btn btn-outline btn-full" id="clear-cart-btn">
+                    <i data-lucide="trash-2"></i> Empty Cart
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCT DETAILS MODAL -->
+    <div class="modal-overlay" id="product-modal-overlay" aria-hidden="true"></div>
+    <div class="product-modal glass" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-product-title">
+        <button class="close-btn glass-btn modal-close" id="close-product-modal" aria-label="Close Details">
+            <i data-lucide="x"></i>
+        </button>
+        
+        <div class="modal-content-grid">
+            <div class="modal-gallery">
+                <div class="main-image-wrapper glass">
+                    <img id="modal-product-img" src="" alt="" class="modal-main-img">
+                    <span class="modal-badge-cat" id="modal-product-cat">Category</span>
+                </div>
+            </div>
+            
+            <div class="modal-details">
+                <span class="product-code-tag" id="modal-product-code">US-CODE-00</span>
+                <h2 id="modal-product-title" class="product-modal-title">Product Name</h2>
+                
+                <div class="product-modal-price" id="modal-product-price">0.00 LKR</div>
+                
+                <p class="product-modal-description" id="modal-product-desc">
+                    Detailed product description will go here, outlining why this innovation is a must-have.
+                </p>
+                
+                <div class="product-specs-section">
+                    <h3>Specifications</h3>
+                    <ul class="specs-list" id="modal-product-specs">
+                        <!-- Dynamic list -->
+                    </ul>
+                </div>
+                
+                <div class="product-features-section">
+                    <h3>Key Features</h3>
+                    <div class="features-tags" id="modal-product-features">
+                        <!-- Dynamic tags -->
+                    </div>
+                </div>
+                
+                <div class="modal-action-bar">
+                    <div class="quantity-controller glass">
+                        <button class="qty-btn" id="modal-qty-minus" aria-label="Decrease Quantity"><i data-lucide="minus"></i></button>
+                        <span class="qty-num" id="modal-qty-val">1</span>
+                        <button class="qty-btn" id="modal-qty-plus" aria-label="Increase Quantity"><i data-lucide="plus"></i></button>
+                    </div>
+                    
+                    <button class="btn btn-primary btn-glow" id="modal-add-cart-btn">
+                        <i data-lucide="shopping-cart"></i> Add to Cart
+                    </button>
+                    
+                    <button class="btn btn-accent btn-glow" id="modal-buy-now-btn">
+                        <i data-lucide="message-square"></i> Buy Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- STORE CONFIGURATION SETTINGS MODAL -->
+    <div class="modal-overlay" id="settings-modal-overlay" aria-hidden="true"></div>
+    <div class="settings-modal glass" id="settings-modal" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+        <div class="settings-header">
+            <h2 id="settings-title"><i data-lucide="sliders" class="title-icon"></i> Store Customization Control</h2>
+            <button class="close-btn glass-btn" id="close-settings" aria-label="Close Settings">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        
+        <form class="settings-form" id="settings-form">
+            <div class="settings-form-body">
+                <p class="settings-intro">Tailor the store configurations below. These options are saved in your browser and automatically update the purchase links and currency labels across the site.</p>
+                
+                <div class="form-group">
+                    <label for="cfg-wa-number"><i data-lucide="message-square"></i> WhatsApp Business Number</label>
+                    <input type="text" id="cfg-wa-number" placeholder="+94707833043" value="+94707833043" required>
+                    <small>Include country code without special characters (e.g. +94707833043)</small>
+                </div>
+
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="cfg-currency-symbol"><i data-lucide="dollar-sign"></i> Currency Symbol</label>
+                        <input type="text" id="cfg-currency-symbol" placeholder="LKR" value="LKR" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cfg-store-title"><i data-lucide="store"></i> Store Brand Name</label>
+                        <input type="text" id="cfg-store-title" placeholder="UNIVER SALE" value="UNIVER SALE" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label><i data-lucide="info"></i> Quick Developer Note</label>
+                    <div class="dev-note-box glass">
+                        This site generates instant checkout links that redirect the customer's shopping cart list directly to WhatsApp in full compliance with the WhatsApp Business API standards.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="settings-footer">
+                <button type="button" class="btn btn-outline" id="reset-settings-btn">Restore Defaults</button>
+                <button type="submit" class="btn btn-primary btn-glow">Apply & Reload</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- MAIN APP SCRIPT -->
+    <script src="./app.js"></script>
+</body>
+</html>
